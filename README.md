@@ -28,33 +28,42 @@ The analysis begins in a Jupyter Notebook where the "New Year Sales Data.csv" is
 
 After loading the cleaned data into a PostgreSQL database, SQL queries were used to extract key metrics and perform deeper analysis.
 
-```
 -- View all data from the table
-   ```select * from new_year;
+    ``` sql
+   select * from new_year;
    ```
 
 -- KEY METRICS --
 
 -- Total Revenue
-    ```select Round(sum(amount)::numeric,2) as total_revenue from new_year; ```
+    ``` sql
+   select Round(sum(amount)::numeric,2) as total_revenue from new_year;
+ ```
 
 -- Total Orders (based on distinct products)
 
-   ```select count(distinct product_id) as total_orders from new_year; ```
+   ``` sql
+   select count(distinct product_id) as total_orders from new_year;
+ ```
 
 -- Average Order Value
 
-  ```select round(sum(amount)::numeric,2)/round(count(distinct product_id)::numeric,2) as avg_order_value from new_year;```
+  ``` sql
+  select round(sum(amount)::numeric,2)/round(count(distinct product_id)::numeric,2) as avg_order_value from new_year;
+  ```
 
 -- Average Revenue per Order
 
-    ```select round(avg(amount)::numeric,2) as avg_revenue from new_year;```
+    ``` sql
+    select round(avg(amount)::numeric,2) as avg_revenue from new_year;
+    ```
 
 -- CUSTOMER DEMOGRAPHICS ANALYSIS --
 
 -- Which gender has high purchasing power?
 
-```select gender, Round(sum(amount),2) as total_purchase from new_year
+``` sql
+select gender, Round(sum(amount),2) as total_purchase from new_year
 group by gender order by total_purchase desc;
 ```
 
