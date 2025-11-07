@@ -8,7 +8,9 @@ This project presents a comprehensive Exploratory Data Analysis (EDA) of a New Y
 
 **Python:**  data cleaning, transformation, and initial visualization.
            .Libraries: pandas, numpy, matplotlib, seaborn, sqlalchemy.
+           
 **SQL (PostgreSQL):** For storing the cleaned data, performing complex queries, and data aggregation.
+
 **Power BI:** For creating an interactive and visually appealing dashboard to present the final insights.
 
 # 1. Data Processing in Python (Jupyter Notebook)
@@ -16,12 +18,19 @@ This project presents a comprehensive Exploratory Data Analysis (EDA) of a New Y
 The analysis begins in a Jupyter Notebook where the "New Year Sales Data.csv" is loaded and prepared for analysis.
 
 # Data Cleaning:
+
 . Empty columns ('Status', 'unnamed1') were dropped.
+
 . Rows with missing 'Amount' values were removed.
+
 . Column names were standardized to a consistent lowercase format.
+
 # Data Transformation:
+
 . Categorical columns like gender and marital_status were mapped from numerical/abbreviated codes to more descriptive string values (e.g., 'F' to 'Female', '0' to 'Unmarried').
+
 . The Amount column was converted to an integer data type.
+
 **Data Export:** The cleaned dataset was exported to a new_year_sales_data.csv file and loaded into a PostgreSQL database table named new_year for further analysis.
 
 # 2. SQL Analysis
@@ -140,26 +149,33 @@ group by 1 order by 2 desc;
 
 The insights derived from Python and SQL were visualized in an interactive Power BI dashboard to provide a clear and consolidated view of the sales performance.
 
-![alt text](https://i.ibb.co/L6V6Qn0/New-Year-Sales-Dashboard.png)
 
 # Key Insights from the Dashboard:
 
 # Top-Level Metrics:
 
 **Total Revenue:** 106.2M
+
 **Total Orders:** 2.35K
+
 **Average Revenue:** 9.45K
+
 **Average Order Value:** 45.21K
 
 # Customer Demographics:
 
 **Gender:** Females are the dominant customer segment, accounting for 2.1K orders and contributing nearly 70% of the total revenue.
+
 **Marital Status:** Unmarried customers place more orders (1,977) and contribute a larger share of the revenue (58.47%).
+
 **Age Group:** The 26-35 age group is the most significant contributor to revenue, accounting for 51.97% of the total. This is followed by the 36-45 age group (40.46%).
 
 **Sales Performance:**
+
 **Occupation:** The IT Sector is the highest revenue-generating occupation (14.8M), followed by Healthcare (13.0M) and Aviation (10.8M).
+
 **State:** Uttar Pradesh leads in total revenue (19M), followed closely by Maharashtra (14M) and Karnataka (14M).
+
 **Product Category:** Food is the top-performing category with 34M in revenue, significantly higher than other categories like Clothing and Electronics.
 
 # Conclusion
