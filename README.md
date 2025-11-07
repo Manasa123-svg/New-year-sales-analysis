@@ -58,15 +58,15 @@ After loading the cleaned data into a PostgreSQL database, SQL queries were used
 
  ``` sql
     select round(avg(amount)::numeric,2) as avg_revenue from new_year;
-    ```
+  ```
 
 -- CUSTOMER DEMOGRAPHICS ANALYSIS --
 
 -- Which gender has high purchasing power?
 
 ``` sql
-select gender, Round(sum(amount),2) as total_purchase from new_year
-group by gender order by total_purchase desc;
+   select gender, Round(sum(amount),2) as total_purchase from new_year
+   group by gender order by total_purchase desc;
 ```
 
 -- Total count of each gender
