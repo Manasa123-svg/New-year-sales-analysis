@@ -29,32 +29,34 @@ The analysis begins in a Jupyter Notebook where the "New Year Sales Data.csv" is
 After loading the cleaned data into a PostgreSQL database, SQL queries were used to extract key metrics and perform deeper analysis.
 
 -- View all data from the table
-    ``` sql
+
+``` sql
    select * from new_year;
    ```
 
 -- KEY METRICS --
 
 -- Total Revenue
-    ``` sql
+
+ ``` sql
    select Round(sum(amount)::numeric,2) as total_revenue from new_year;
- ```
+   ```
 
 -- Total Orders (based on distinct products)
 
-   ``` sql
+``` sql
    select count(distinct product_id) as total_orders from new_year;
- ```
+   ```
 
 -- Average Order Value
 
-  ``` sql
+``` sql
   select round(sum(amount)::numeric,2)/round(count(distinct product_id)::numeric,2) as avg_order_value from new_year;
   ```
 
 -- Average Revenue per Order
 
-    ``` sql
+ ``` sql
     select round(avg(amount)::numeric,2) as avg_revenue from new_year;
     ```
 
@@ -68,9 +70,9 @@ group by gender order by total_purchase desc;
 ```
 
 -- Total count of each gender
-``` sql
-      select gender, count(*) from new_year group by 1;
-```
+   ``` sql
+   select gender, count(*) from new_year group by 1;
+   ```
 
 -- Count of customers by age group
 ``` sql
